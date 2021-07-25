@@ -1,8 +1,11 @@
 const express=require('express')
 const mongoose=require('mongoose')
+const dotenv=require('dotenv')
 const app=express()
 
-const DB='mongodb+srv://ayushee11:maithilimadan@cluster0.so2pm.mongodb.net/mernstack?retryWrites=true&w=majority'
+dotenv.config({path:'./config.env'})
+
+const DB=process.env.DATABASE
 
 mongoose.connect(DB,{
      useNewUrlParser:true,
